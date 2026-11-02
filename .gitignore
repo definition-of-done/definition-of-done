@@ -1,0 +1,19 @@
+# Environment
+.env
+.env.*
+
+# Dependencies / build output
+node_modules/
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
