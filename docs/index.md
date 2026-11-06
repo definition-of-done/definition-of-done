@@ -3,9 +3,9 @@
 Traceability root: `REQ → UC → spec → test → code → docs`. Every REQ gets a row when
 created; the row is only marked done when the full chain resolves (§7 of AGENTS.md).
 
-| REQ | Title | Status | Use cases | Specs | Tests | Code | Docs |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| [REQ-0001](REQ-0001.md) | Founding product requirement | Approved (Stage 0) | — | — | — | — | — |
+| REQ | Title | Status | Architecture | Use cases | Specs | Tests | Code | Docs |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [REQ-0001](REQ-0001.md) | Founding product requirement | Stage 1 in review | [draft](ARCHITECTURE.md) | — | — | — | — | — |
 
 ## Conventions
 
