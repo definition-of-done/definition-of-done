@@ -6,7 +6,7 @@ the agent records it. This file is kept current; delete rows as they land.
 
 | # | Action | Where | Urgency |
 | --- | --- | --- | --- |
-| 1 | Claim the `definition-of-done` identity (GitHub, PyPI, npm) | [issue #5](https://github.com/pappes/definition-of-done/issues/5) | **Now** — free ≠ ours, squatting risk |
+| 1 | Identity: GitHub org ✅ PyPI ✅ — remaining: npm placeholder + revoke the PyPI token you shared | [issue #5](https://github.com/pappes/definition-of-done/issues/5) | **Now** — 5 min |
 | 2 | Run 5 market-validation conversations | [issue #7](https://github.com/pappes/definition-of-done/issues/7) | Before Stage 4 investment |
 | 3 | Stage 3 signoff — behaviour specs | [issue #13](https://github.com/pappes/definition-of-done/issues/13) | **Now** — gate passed, ~10 min review |
 | 4 | Signoff at every later stage gate | Each stage issue | Recurring |
@@ -15,43 +15,20 @@ the agent records it. This file is kept current; delete rows as they land.
 
 ## 1. Claim the identity (issue #5)
 
-Name was verified free on 2026-11-06. Claim all three today; each takes minutes.
+Progress 2026-11-07: **GitHub org `definition-of-done` created** (you) and
+**PyPI name reserved** — `definition-of-done` 0.0.1.dev0 placeholder uploaded, live at
+<https://pypi.org/project/definition-of-done/>. Dev-version placeholder, so real
+releases still start at `0.1.0`. Two things left:
 
-### a. GitHub handle/org `definition-of-done`
+### a. Revoke the PyPI API token you pasted in session
 
-1. Confirm still free: open <https://github.com/definition-of-done> — a **404** means free.
-2. Create a free org: <https://github.com/organizations/plan> → **Free** plan →
-   organization name `definition-of-done`, contact email yours.
-3. Later (not now): transfer or mirror this repo under the org when you want public
-   presence; keep `pappes/definition-of-done` as-is until then.
+It was used once for the upload and the local copy was shredded, but it's still live
+on your account: <https://pypi.org/account/api-tokens/> → delete it → create a new
+one only when the first real release ships.
 
-### b. PyPI placeholder
+### b. npm placeholder (~5 min)
 
-1. Register an account: <https://pypi.org/account/register/> (use your normal email).
-2. Confirm free: <https://pypi.org/pypi/definition-of-done/json> → **404** means free.
-3. PyPI has no name reservation — you must upload a placeholder to block squatters:
-
-   ```bash
-   mkdir /tmp/dod-placeholder && cd /tmp/dod-placeholder
-   cat > pyproject.toml <<'EOF'
-   [project]
-   name = "definition-of-done"
-   version = "0.0.1"
-   description = "Placeholder reservation for the definition-of-done CLI (real releases start at 0.1.0). Repo: https://github.com/pappes/definition-of-done"
-   requires-python = ">=3.12"
-   EOF
-   echo "# definition-of-done" > README.md
-   mkdir src/definition_of_done && touch src/definition_of_done/__init__.py
-   pipx run build   # or: python -m pip install build && python -m build
-   pipx run twine upload dist/*   # uses an API token from pypi.org/account -> API tokens
-   ```
-
-   Note: PyPI never lets a deleted name be reused, and `0.0.1` can't be re-uploaded —
-   that's fine, real releases start at `0.1.0`.
-
-### c. npm placeholder
-
-1. Sign up: <https://www.npmjs.com/signup>.
+1. Sign up: <https://www.npmjs.com/signup> (or `npm signup`).
 2. Confirm free: <https://registry.npmjs.org/definition-of-done> → **404** means free.
 3. Publish a README-only placeholder:
 
@@ -62,15 +39,22 @@ Name was verified free on 2026-11-06. Claim all three today; each takes minutes.
    npm publish   # unscoped names are public by default
    ```
 
-   Same caveat: npm won't let the name be reused after unpublish, so `0.0.1` as a
-   reservation is permanent and harmless; the real shim starts at `0.1.0`.
+   Same caveat as PyPI: npm won't let the name be reused after unpublish, so `0.0.1`
+   as a reservation is permanent and harmless; the real shim starts at `0.1.0`.
 
-### d. Decide the naming pair (needed before b/c)
+### c. Later: move the repo under the org
 
-Proposed: package name `definition-of-done` on both registries, CLI command `dod`
-(the command name is independent of the package name). Re-verified free 2026-11-07:
-GitHub handle, PyPI, and npm all 404. `dod` itself is **taken** on PyPI — doesn't
-matter unless you want that exact package name. Reply here or on #5 to confirm.
+When you want the public face to be the org: repo **Settings → General → Transfer
+ownership** → transfer `pappes/definition-of-done` to org `definition-of-done`.
+GitHub redirects old URLs, so doing it early is cheap. Not urgent — nothing in the
+pipeline depends on the repo's owner path.
+
+### d. Naming pair — confirmed by action
+
+You created the org and the PyPI token under `definition-of-done`, so the pair is
+locked in practice: package `definition-of-done` on PyPI/npm, CLI command `dod`
+(`dod` is taken on PyPI — irrelevant, the command name is independent). Say the word
+on #5 if you ever want it revisited.
 
 ---
 
