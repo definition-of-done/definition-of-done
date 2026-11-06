@@ -8,7 +8,7 @@ the agent records it. This file is kept current; delete rows as they land.
 | --- | --- | --- | --- |
 | 1 | Claim the `definition-of-done` identity (GitHub, PyPI, npm) | [issue #5](https://github.com/pappes/definition-of-done/issues/5) | **Now** — free ≠ ours, squatting risk |
 | 2 | Run 5 market-validation conversations | [issue #7](https://github.com/pappes/definition-of-done/issues/7) | Before Stage 4 investment |
-| 3 | Stage 3 signoff — behaviour specs | Stage 3 issue (coming) | When requested |
+| 3 | Stage 3 signoff — behaviour specs | [issue #13](https://github.com/pappes/definition-of-done/issues/13) | **Now** — gate passed, ~10 min review |
 | 4 | Signoff at every later stage gate | Each stage issue | Recurring |
 
 ---
@@ -103,17 +103,20 @@ approved REQ.
 
 ---
 
-## 3. Stage 3 signoff — behaviour specs (upcoming)
+## 3. Stage 3 signoff — behaviour specs ([issue #13](https://github.com/pappes/definition-of-done/issues/13))
 
-The agent is writing `specs/UC-0001.feature` … `specs/UC-0006.feature` (Gherkin
-behaviour contracts derived from the UCs you just approved) and will post them in a
-Stage 3 issue with a signoff request.
+Written and gate-passed: `specs/UC-0001.feature` … `specs/UC-0006.feature` — Gherkin
+behaviour contracts derived from the UCs you approved, 4 scenarios each
+(happy ×2 · edge · failure). The deterministic gate (official Cucumber parser +
+coverage rules) passes and was adversarially tested; evidence and re-run steps are
+in the issue.
 
 What to review (~10 min): each feature file's scenarios should read like the approved
-UC scenarios — happy path, edge cases, failure modes — phrased as observable
-behaviour (Given/When/Then), not implementation.
+UC scenarios — phrased as observable behaviour (Given/When/Then), not implementation.
+The issue lists three spot-check scenarios worth your attention.
 
-To sign off: comment `approved` on the Stage 3 issue.
+To sign off: comment `approved` on [#13](https://github.com/pappes/definition-of-done/issues/13).
+Changes: name the scenario; ambiguity is a defect.
 
 ---
 
