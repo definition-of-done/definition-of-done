@@ -6,7 +6,7 @@ created; the row is only marked done when the full chain resolves (§7 of AGENTS
 | REQ | Title | Status | Architecture | Use cases | Specs | Tests | Code | Docs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [REQ-0001](REQ-0001.md) | Founding product requirement | Stage 1 in review | [draft](ARCHITECTURE.md) | — | — | — | — | — |
-| [REQ-0002](REQ-0002.md) | Value & collateral capture | Stage 0 draft | — | — | — | — | — | — |
+| [REQ-0002](REQ-0002.md) | Value & collateral capture | Stage 0 approved | — | — | — | — | — | — |
 
 ## Conventions
 
