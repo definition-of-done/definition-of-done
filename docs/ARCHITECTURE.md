@@ -1,7 +1,7 @@
 # ARCHITECTURE — Definition of Done
 
 **ID:** REQ-0001 (architecture for the whole product; per-feature HLDs will cite this file)
-**Status:** Draft v2 — owner decisions folded in; awaiting human architect signoff (Stage 1 gate)
+**Status:** Approved — Stage 1 gate passed, signed off by human product owner 2026-11-06 (v2; supersedes v1)
 **Author:** Architect agent
 **Date:** 2026-11-06
 **Inputs:** REQ-0001 (approved), REQ-0002 (approved, Stage 0 gate passed 2026-11-06),
@@ -215,10 +215,10 @@ caught) a real slip we made here. If a gate never fires in dogfooding, it is sus
 
 ## Stage 1 exit gate
 
-- [ ] Every component above fits the existing boundary table (§3); no module crosses layers upward.
-- [ ] No new runtime dependency is introduced without a rationale line (§8).
-- [ ] Harness boundary is explicit: CLI and harness meet only through repo files (§2).
-- [ ] Gates are deterministic; human signoff is never replaced by agent judgment (§5).
-- [ ] Decision: **APPROVE / REVISE** (REVISE is a valid, respected answer)
+- [x] Every component above fits the existing boundary table (§3); no module crosses layers upward.
+- [x] No new runtime dependency is introduced without a rationale line (§8).
+- [x] Harness boundary is explicit: CLI and harness meet only through repo files (§2).
+- [x] Gates are deterministic; human signoff is never replaced by agent judgment (§5).
+- [x] Decision: **APPROVE**
 
-**Signoff:** ____________________ (human architect)  **Date:** ____________
+**Signoff:** pappes, human product owner  **Date:** 2026-11-06
