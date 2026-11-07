@@ -6,55 +6,12 @@ the agent records it. This file is kept current; delete rows as they land.
 
 | # | Action | Where | Urgency |
 | --- | --- | --- | --- |
-| 1 | Identity: org ✅ PyPI ✅ token revoked ✅ — remaining: npm placeholder | [issue #5](https://github.com/pappes/definition-of-done/issues/5) | **Now** — 5 min |
-| 2 | Run 5 market-validation conversations | [issue #7](https://github.com/pappes/definition-of-done/issues/7) | Before Stage 4 investment |
-| 3 | Signoff at every later stage gate | Each stage issue | Recurring |
+| 1 | Run 5 market-validation conversations | [issue #7](https://github.com/pappes/definition-of-done/issues/7) | Before Stage 4 investment |
+| 2 | Signoff at every later stage gate | Each stage issue | Recurring |
 
 ---
 
-## 1. Claim the identity (issue #5)
-
-Progress 2026-11-07: **GitHub org `definition-of-done` created** (you) and
-**PyPI name reserved** — `definition-of-done` 0.0.1.dev0 placeholder uploaded, live at
-<https://pypi.org/project/definition-of-done/>. Dev-version placeholder, so real
-releases still start at `0.1.0`. One thing left:
-
-*(Done 2026-11-07: the session-shared PyPI API token was revoked by owner. Create a
-new one only when the first real release ships.)*
-
-### a. npm placeholder (~5 min)
-
-1. Sign up: <https://www.npmjs.com/signup> (or `npm signup`).
-2. Confirm free: <https://registry.npmjs.org/definition-of-done> → **404** means free.
-3. Publish a README-only placeholder:
-
-   ```bash
-   mkdir /tmp/dod-npm && cd /tmp/dod-npm
-   npm init -y   # set name "definition-of-done", version "0.0.1"
-   npm login
-   npm publish   # unscoped names are public by default
-   ```
-
-   Same caveat as PyPI: npm won't let the name be reused after unpublish, so `0.0.1`
-   as a reservation is permanent and harmless; the real shim starts at `0.1.0`.
-
-### b. Later: move the repo under the org
-
-When you want the public face to be the org: repo **Settings → General → Transfer
-ownership** → transfer `pappes/definition-of-done` to org `definition-of-done`.
-GitHub redirects old URLs, so doing it early is cheap. Not urgent — nothing in the
-pipeline depends on the repo's owner path.
-
-### c. Naming pair — confirmed by action
-
-You created the org and the PyPI token under `definition-of-done`, so the pair is
-locked in practice: package `definition-of-done` on PyPI/npm, CLI command `dod`
-(`dod` is taken on PyPI — irrelevant, the command name is independent). Say the word
-on #5 if you ever want it revisited.
-
----
-
-## 2. Market validation — 5 conversations (issue #7)
+## 1. Market validation — 5 conversations (issue #7)
 
 Goal: test the REQ-0001 value story before we build the runner. 5 conversations,
 15–20 min each. Mix: **2–3 vibe coders** (Cursor/Copilot/Lovable-style users) and
@@ -83,9 +40,20 @@ approved REQ.
 
 ---
 
-## 3. Every later stage gate
+## 2. Every later stage gate
 
 Standing rule (AGENTS.md §5): no stage advances without human signoff. Expect a
 signoff request on each stage issue (architecture extraction #10, gate runner #8,
 templates #6, …). Same drill: review the linked artifacts, comment `approved` (or
 objections — they get fixed and re-requested).
+
+---
+
+## Completed
+
+- **2026-11-07 — Identity claimed (issue #5 closed).** GitHub org `definition-of-done`
+  created · PyPI `definition-of-done` 0.0.1.dev0 placeholder live · npm
+  `definition-of-done` 0.0.1 placeholder published · session-shared PyPI API token
+  revoked. Naming pair locked in practice: package `definition-of-done` on PyPI/npm,
+  CLI command `dod`. Optional whenever: transfer `pappes/definition-of-done` into the
+  org (Settings → General → Transfer ownership; GitHub redirects old URLs).
