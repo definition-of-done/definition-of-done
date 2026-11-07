@@ -5,7 +5,7 @@
 # status: Draft — Stage 3, awaiting human signoff
 # ---
 # Behavior contract for UC-0003 — Approve the work, don't redo it.
-# 1:1 with docs/UC-0003.md scenarios S1–S4 (ARCHITECTURE §4).
+# 1:1 with docs/UC-0003.md scenarios S1–S4 (ARCH-0001 §4).
 
 Feature: Agent work arrives specified, scoped, and reviewable so approval is a check, not a rewrite
 

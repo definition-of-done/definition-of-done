@@ -71,7 +71,7 @@ Every feature, fix, and refactor walks this pipeline. A stage may not start unti
 | # | Stage | Artifact | Exit gate (deterministic) | Signoff |
 | --- | --- | --- | --- | --- |
 | 0 | Market-first | `docs/REQ-xxxx.md` — problem, JTBD, value proposition, launch message | Problem + human job + value story all present; "no" is a valid answer | Human product owner |
-| 1 | Architecture | `docs/ARCHITECTURE.md` | New component fits existing boundaries; no boundary violation, no new dependency unexplained | Human architect |
+| 1 | Architecture | `docs/ARCH-0001.md` | New component fits existing boundaries; no boundary violation, no new dependency unexplained | Human architect |
 | 2 | Use cases | `docs/UC-xxxx.md` | Every use case traces to a `REQ-xxxx`; every `REQ` is covered | Peer review |
 | 3 | Behavior contract | `specs/UC-xxxx.feature` (Gherkin) | Specs parse; Given/When/Then cover happy path, edge cases, failure modes | Human |
 | 4 | Design | `docs/HLD-xxxx.md`, `docs/DD-xxxx.md` | Interfaces, data flow, and error handling fully specified | Peer review |
@@ -96,7 +96,7 @@ Every feature, fix, and refactor walks this pipeline. A stage may not start unti
 | Agent | Produces | May touch | Forbidden |
 | --- | --- | --- | --- |
 | Product Analyst | `REQ-xxxx` | `docs/REQ-*` | Any code, any design |
-| Architect | `ARCHITECTURE.md`, HLD | `docs/ARCHITECTURE.md`, `docs/HLD-*` | Implementation |
+| Architect | `ARCH-0001.md`, HLD | `docs/ARCH-0001.md`, `docs/HLD-*` | Implementation |
 | Spec Writer | use cases, Gherkin | `docs/UC-*`, `specs/*` | Implementation |
 | Test Agent | failing tests | `tests/*` | Implementation, spec relaxation |
 | Implementer | code | one module per task | Other modules, tests, specs |

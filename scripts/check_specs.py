@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Stage 3 gate (ARCHITECTURE.md §5): feature files parse; each UC has
+"""Stage 3 gate (ARCH-0001.md §5): feature files parse; each UC has
 happy + edge + failure scenarios. Deterministic, no network, no LLM.
 Throwaway check for Stage 3 signoff; the permanent runner is issue #8."""
 import glob

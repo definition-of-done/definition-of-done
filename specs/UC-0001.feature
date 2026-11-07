@@ -5,7 +5,7 @@
 # status: Draft — Stage 3, awaiting human signoff
 # ---
 # Behavior contract for UC-0001 — Idea to software that stays changeable.
-# 1:1 with docs/UC-0001.md scenarios S1–S4 (ARCHITECTURE §4).
+# 1:1 with docs/UC-0001.md scenarios S1–S4 (ARCH-0001 §4).
 
 Feature: A plain-language idea becomes software through the full artifact chain
 

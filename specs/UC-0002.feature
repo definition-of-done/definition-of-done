@@ -5,7 +5,7 @@
 # status: Draft — Stage 3, awaiting human signoff
 # ---
 # Behavior contract for UC-0002 — Six months later, the app is still fixable.
-# 1:1 with docs/UC-0002.md scenarios S1–S4 (ARCHITECTURE §4).
+# 1:1 with docs/UC-0002.md scenarios S1–S4 (ARCH-0001 §4).
 
 Feature: A shipped app stays changeable because every line traces to approved intent
 
