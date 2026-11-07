@@ -6,7 +6,7 @@ the agent records it. This file is kept current; delete rows as they land.
 
 | # | Action | Where | Urgency |
 | --- | --- | --- | --- |
-| 1 | Run 5 market-validation conversations | [issue #7](https://github.com/pappes/definition-of-done/issues/7) | Before Stage 4 investment |
+| 1 | Run 5 market-validation conversations | [issue #7](https://github.com/definition-of-done/definition-of-done/issues/7) | Before Stage 5 investment |
 | 2 | Signoff at every later stage gate | Each stage issue | Recurring |
 
 ---
@@ -33,7 +33,7 @@ Confirm each checklist box from the issue:
       "gates are deterministic checks, agents never auto-pass a stage")
 - [ ] At least one vibe coder names a **concrete app they could not fix**
 
-Log results as a comment on [#7](https://github.com/pappes/definition-of-done/issues/7)
+Log results as a comment on [#7](https://github.com/definition-of-done/definition-of-done/issues/7)
 (one line per person: persona, reaction, quote). If someone flatly contradicts
 REQ-0001, say so in the comment — we open a new issue rather than editing the
 approved REQ.
@@ -43,17 +43,7 @@ approved REQ.
 ## 2. Every later stage gate
 
 Standing rule (AGENTS.md §5): no stage advances without human signoff. Expect a
-signoff request on each stage issue (architecture extraction #10, gate runner #8,
-templates #6, …). Same drill: review the linked artifacts, comment `approved` (or
-objections — they get fixed and re-requested).
-
----
-
-## Completed
-
-- **2026-11-07 — Identity claimed (issue #5 closed).** GitHub org `definition-of-done`
-  created · PyPI `definition-of-done` 0.0.1.dev0 placeholder live · npm
-  `definition-of-done` 0.0.1 placeholder published · session-shared PyPI API token
-  revoked. Naming pair locked in practice: package `definition-of-done` on PyPI/npm,
-  CLI command `dod`. Optional whenever: transfer `pappes/definition-of-done` into the
-  org (Settings → General → Transfer ownership; GitHub redirects old URLs).
+signoff request on each stage issue — next up: Stage-4 closeout #10 (peer review of
+HLD-0001/0002 + DD-0001..0005), then Stage-5 pairs #15–#24, review #25, docs #26
+(plus gate runner #8, templates #6). Same drill: review the linked artifacts, comment
+`approved` (or objections — they get fixed and re-requested).
