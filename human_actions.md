@@ -6,17 +6,34 @@ the agent records it. This file is kept current; delete rows as they land.
 
 | # | Action | Where | Urgency |
 | --- | --- | --- | --- |
-| 1 | Run 5 market-validation conversations — **1 done** (steve, 3/5 signals; see `market-surveys/steve survey`), 4 to go | [issue #7](https://github.com/definition-of-done/definition-of-done/issues/7) | Before Stage 5 investment |
-| 2 | Stage-4 signoff — review HLD-0001/0002 + DD-0001..0005, comment `approved` on #10 | [issue #10](https://github.com/definition-of-done/definition-of-done/issues/10) | **Now — blocks all Stage-5 work** |
+| 1 | Stage-4 signoff — review HLD-0001/0002 + DD-0001..0005, comment `approved` on #10 | [issue #10](https://github.com/definition-of-done/definition-of-done/issues/10) | **Now — blocks all Stage-5 work** |
+| 2 | Run the remaining 4 market-validation conversations — **1 done** (steve, 3/5 signals; see `market-surveys/steve survey`) | [issue #7](https://github.com/definition-of-done/definition-of-done/issues/7) | Before Stage 5 investment |
 | 3 | Signoff at every later stage gate | Each stage issue | Recurring |
 
 ---
 
-## 1. Market validation — 5 conversations (issue #7)
+## 1. Stage-4 signoff (issue #10)
+
+All agent-side work is done and re-verified (repo clean, spec gate exits 0). The set to
+review: `docs/HLD-0001.md`, `docs/HLD-0002.md`, `docs/DD-0001.md` … `docs/DD-0005.md` —
+it passed self-review plus two independent subagent reviews; every finding was fixed
+(commit history and review notes are on the issue).
+
+Same drill as Stages 1–3: read what you have time for (the issue has a reading-order
+TOC), then comment `approved` or `approved-with-conditions <conditions>` — objections
+get fixed and re-requested. On approval the agent does the closeout mechanics (ARCH v3
+pointer, REQ-0001 front matter → `stage: stage-5`) and starts #15.
+
+## 2. Market validation — 5 conversations (issue #7)
 
 Goal: test the REQ-0001 value story before we build the runner. 5 conversations,
 15–20 min each. Mix: **2–3 vibe coders** (Cursor/Copilot/Lovable-style users) and
 **1–2 skeptical engineers** who'd never trust AI output without checks.
+
+**Progress: 1 of 5 done.** steve (vibe coder) filled 3 boxes: confirmed the
+prototype-to-zombie-app problem, could repeat the difference, yes to star/try.
+Raw notes: `market-surveys/steve survey`. Still empty: the two "skeptical engineer"
+boxes and the concrete-app quote — prioritize those personas next.
 
 Pitch to open with (then shut up and listen):
 > "An open-source agent workforce that takes you from vibe-coded prototype to
@@ -26,10 +43,10 @@ Pitch to open with (then shut up and listen):
 
 Confirm each checklist box from the issue:
 
-- [ ] They confirm the prototype-to-zombie-app problem (ask: "what broke in your
-      weekend project and could you fix it?")
-- [ ] They can repeat the difference from LangChain/Spec Kit/Cursor in one sentence
-- [ ] Star/waitlist/pilot signal — ask directly: "would you star or try this?"
+- [x] They confirm the prototype-to-zombie-app problem (ask: "what broke in your
+      weekend project and could you fix it?") — *steve*
+- [x] They can repeat the difference from LangChain/Spec Kit/Cursor in one sentence — *steve*
+- [x] Star/waitlist/pilot signal — ask directly: "would you star or try this?" — *steve*
 - [ ] At least one skeptical engineer calls artifact-gates **credible** (push on:
       "gates are deterministic checks, agents never auto-pass a stage")
 - [ ] At least one vibe coder names a **concrete app they could not fix**
@@ -41,10 +58,9 @@ approved REQ.
 
 ---
 
-## 2. Every later stage gate
+## 3. Every later stage gate
 
 Standing rule (AGENTS.md §5): no stage advances without human signoff. Expect a
-signoff request on each stage issue — next up: Stage-4 closeout #10 (peer review of
-HLD-0001/0002 + DD-0001..0005), then Stage-5 pairs #15–#24, review #25, docs #26
-(plus gate runner #8, templates #6). Same drill: review the linked artifacts, comment
-`approved` (or objections — they get fixed and re-requested).
+signoff request on each stage issue — after #10 closes: Stage-5 pairs #15–#24,
+review #25, docs #26 (plus gate runner #8, templates #6). Same drill: review the
+linked artifacts, comment `approved` (or objections — they get fixed and re-requested).
