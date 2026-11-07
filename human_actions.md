@@ -6,8 +6,9 @@ the agent records it. This file is kept current; delete rows as they land.
 
 | # | Action | Where | Urgency |
 | --- | --- | --- | --- |
-| 1 | Run 5 market-validation conversations | [issue #7](https://github.com/definition-of-done/definition-of-done/issues/7) | Before Stage 5 investment |
-| 2 | Signoff at every later stage gate | Each stage issue | Recurring |
+| 1 | Run 5 market-validation conversations — **1 done** (steve, 3/5 signals; see `market-surveys/steve survey`), 4 to go | [issue #7](https://github.com/definition-of-done/definition-of-done/issues/7) | Before Stage 5 investment |
+| 2 | Stage-4 signoff — review HLD-0001/0002 + DD-0001..0005, comment `approved` on #10 | [issue #10](https://github.com/definition-of-done/definition-of-done/issues/10) | **Now — blocks all Stage-5 work** |
+| 3 | Signoff at every later stage gate | Each stage issue | Recurring |
 
 ---
 
