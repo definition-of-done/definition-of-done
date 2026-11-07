@@ -1,0 +1,47 @@
+Objective
+- Project waits on the human for Stage-4 signoff on issue #10 (HLD-0001/0002 + DD-0001..0005). On signoff, close out the baseline and execute Stage 5: tasks #15→#24 in dependency order (one per DD, test/doc pairs), then review #25, docs #26, Stage-8 #9.
+Requirements
+- Every message the system produces carries 3 bits for the human: (1) there is a problem, (2) what it is (file/line/rule id + offending content), (3) what the human can do next. Standard is normative at docs/HLD-0001.md §9.3.
+- Commit style <type>: <summary> (REQ-0001); push-to-main allowed for this project (user directed 2026-11-07). Agents may inform but never sign off gates.
+- No invented CLI surface in message examples — verified commands: dod index / check [--fix] / trace [--require REQ-xxxx] [--json] / explain / report / init.
+Decisions
+- Normative standard lives in HLD-0001 §9.3; §9.1 crash row cites it; DDs cite §9.3 at their message tables.
+- Audit posted as a comment on #28 (verified against the real diff, no fabricated rows); #28 closed. Specs (UC-0001..0006) judged already §9.3-consistent — no spec edits.
+- Pre-commit hook (M9) stderr messages are not specified in any doc — hook design is Stage-5 issue #23; §9.3 applies when it's written.
+- argparse built-in usage errors accepted as §9.3-compliant (DD-0004 §6 note); BrokenPipeError stays silent by design.
+- STD-0001 (clean code, kept simple) approved in chat 2026-11-07; binding from the first Stage-5 commit. Precedence: AGENTS.md > approved ARCH/HLD/DD > STD-0001 > convention; contradictions resolved by amending docs in writing, not silent deviation.
+- Stage-5 breakdown kept simple (user direction): 5 tasks, one per DD; only DD-0001 decomposed into subtasks now (T0–T9 checklist on #15); DD-0002..0005 get decomposed when their task goes active. Breakdown posted as plan comment on #10; DD-0001 checklist on #15.
+- Stage-5 pair mapping: #15/#16=DD-0001, #17/#18=DD-0002, #19/#20=DD-0003, #21/#22=DD-0004, #23/#24=DD-0005.
+Work State
+Completed
+- Issue #28 fully done: 8 docs edited (HLD-0001 §9.3 + §9.1; DD-0001 parser messages/degraded WARN/§6 note; DD-0002 traces-to header + TraceNotFound example + §4 rows; DD-0003 crash-note standard + COV002/COV003/empty-feature/.dodignore/code-dir WARNs; DD-0004 §6 note; DD-0005 §3/§6; HLD-0002 §8; ARCH-0001 L4 row). Committed d8e6139, pushed.
+- Spec gate passes after edits (exit 0). Audit comment posted: https://github.com/definition-of-done/definition-of-done/issues/28#issuecomment-6706769225 — #28 closed.
+- human_actions.md hold note lifted (commit 1e7597b, pushed).
+- Stages 1–3 approved (#2/#3/#4). Stage-4 set (HLD-0001/0002, DD-0001..0005) posted for signoff on #10.
+- docs/STD-0001.md coding standards written (clean code, kept simple; cites HLD-0001 §7 deps, §1 layout, §9/§9.3 errors+messages). Commit db81bac, pushed. APPROVED in chat 2026-11-07; status flipped, commit 6eba1ec, pushed.
+- Stage-5 breakdown posted: plan comment on #10 (https://github.com/definition-of-done/definition-of-done/issues/10#issuecomment-6707102922) and DD-0001 T0–T9 checklist on #15 (https://github.com/definition-of-done/definition-of-done/issues/15#issuecomment-6707103058). Checklist on #15 is the live tick-list for DD-0001.
+Active
+- Nothing in flight — all content committed and pushed; waiting on #10 signoff.
+Blocked
+- #10 Stage-4 signoff requires a named human comment approved / approved-with-conditions.
+- #7 market validation: 4 of 5 conversations remain (owner-side; steve done at 3/5 signals).
+- Stage-5 pairs (#15→#24), Stage-6/7/8 (#25, #26, #9), parallel tracks (#6, #8, #11, #12) all blocked on #10.
+Next Move
+1. On #10 signoff: amend ARCH-0001 with the v3 baseline pointer, flip REQ-0001 front matter to stage: stage-5, commit.
+2. Start #15 at T0 (test harness: pytest config, conftest fixtures, empty src/dod/__init__.py) and work the T0–T9 checklist on #15; then #17→#24 in dependency order, decomposing each DD when it goes active. All Stage 5 code follows STD-0001.
+3. At #23/#24 (DD-0005): resolve in writing that DD-0005 §5 references to a validate subcommand and traces_to edge have no counterpart in DD-0004 §4 / DD-0002 EDGE_TYPES — amend the doc (likely reword to entry_supports/entry_evidence and dod check) rather than inventing surface.
+4. Keep committing docs/feat/fix with (REQ-0001) suffix; push to main.
+Relevant Files
+- docs/STD-0001.md: coding standards (binding on all src/ and tests/ code from first Stage-5 commit).
+- docs/HLD-0001.md: §9.3 message standard (normative), §9.1 exit mapping, §4 CLI table, §5 check registry, §1 layout, §10 test workspaces.
+- docs/DD-0001.md … DD-0005.md, docs/HLD-0002.md, docs/ARCH-0001.md: all §9.3-aligned as of d8e6139.
+- human_actions.md: human task list (tracked, current).
+- scripts/check_specs.py: spec gate runner.
+- specs/UC-0001.feature … UC-0006.feature: approved specs, §9.3-consistent.
+Important Context
+- Tooling hazard: read/edit tools have returned stale content for repo docs (phantom sections, old versions). Ground truth = shell cat/sed/grep + git diff; verify edits and commits (git log/git status) immediately after making them.
+- Repo definition-of-done/definition-of-done, branch main; REQ-0001.plan now tracked in git (this commit).
+- gh issue view fails (Projects-classic GraphQL deprecation) — use gh api repos/definition-of-done/definition-of-done/issues/N.
+- Spec gate: /tmp/opencode/gherkin-venv/bin/python scripts/check_specs.py (throwaway venv; recreate with python3 -m venv + pip install gherkin-official if missing).
+- The tool is the dod CLI; issue bodies #15/#16 mention sdlc/model.py and sdlc/parser.py — stale names. DD-0001 modules are dod/frontmatter.py, dod/workspace.py, dod/artifacts.py.
+- DD module map: DD-0001 = frontmatter/workspace/artifacts (FM001/FM002/AR001/AR002/WS001); DD-0002 = trace.py/index.py (EDGE_TYPES, TraceGraph, TR001/TR002/IX001/IX002); DD-0003 = gates framework + checks.py + codescan.py (Finding/CheckResult/register/run_all); DD-0004 = cli.py/report.py/init.py (exit codes 0/1/2, templates as package data); DD-0005 = collateral.py/collateral_schema.py (parse_block with fence="+++", Entry, validate).
