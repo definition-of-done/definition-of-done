@@ -1,0 +1,23 @@
+steve survey
+
+
+Confirm each checklist box from the issue:
+
+- [ ] They confirm the prototype-to-zombie-app problem (ask: "what broke in your
+      weekend project and could you fix it?")
+Yes has experienced it - could have fixed it but got lazy. (game - caretaker for a day)
+
+made a change to requirements -> unexpected UI change
+
+
+- [ ] They can repeat the difference from Spec to working software when requirements change in one sentence
+Yes
+
+- [ ] Star/waitlist/pilot signal — ask directly: "would you star or try this?"
+Yes
+
+- [ ] At least one skeptical engineer calls artifact-gates **credible** (push on:
+      "gates are deterministic checks, agents never auto-pass a stage")
+
+
+- [ ] At least one vibe coder names a **concrete app they could not fix**
