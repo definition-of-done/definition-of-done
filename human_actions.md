@@ -6,7 +6,7 @@ the agent records it. This file is kept current; delete rows as they land.
 
 | # | Action | Where | Urgency |
 | --- | --- | --- | --- |
-| 1 | Stage-4 signoff — review HLD-0001/0002 + DD-0001..0005, comment `approved` on #10 — **hold until [#27](https://github.com/definition-of-done/definition-of-done/issues/27) (regex readability fix) lands** | [issue #10](https://github.com/definition-of-done/definition-of-done/issues/10) | **Now — blocks all Stage-5 work** |
+| 1 | Stage-4 signoff — review HLD-0001/0002 + DD-0001..0005, comment `approved` on #10 — **hold until [#28](https://github.com/definition-of-done/definition-of-done/issues/28) (error-message audit) lands** | [issue #10](https://github.com/definition-of-done/definition-of-done/issues/10) | **Now — blocks all Stage-5 work** |
 | 2 | Run the remaining 4 market-validation conversations — **1 done** (steve, 3/5 signals; see `market-surveys/steve survey`) | [issue #7](https://github.com/definition-of-done/definition-of-done/issues/7) | Before Stage 5 investment |
 | 3 | Signoff at every later stage gate | Each stage issue | Recurring |
 
@@ -14,9 +14,11 @@ the agent records it. This file is kept current; delete rows as they land.
 
 ## 1. Stage-4 signoff (issue #10)
 
-**Hold:** review feedback [#27](https://github.com/definition-of-done/definition-of-done/issues/27)
-(`TRACE_RE` in DD-0003 is unauditable as written) must be fixed first — the agent will
-push the amended DD-0003 and post it on #10 for a quick re-check.
+**Hold:** review feedback [#28](https://github.com/definition-of-done/definition-of-done/issues/28)
+(error messages must carry 3 bits for the human: problem / cause / next action) must be
+audited and gaps fixed first — the agent will push the amended docs, post the audit table
+on #10, then this hold is lifted. ([#27](https://github.com/definition-of-done/definition-of-done/issues/27),
+the regex readability fix, landed in `733bb82` and is closed.)
 
 All agent-side work is done and re-verified (repo clean, spec gate exits 0). The set to
 review: `docs/HLD-0001.md`, `docs/HLD-0002.md`, `docs/DD-0001.md` … `docs/DD-0005.md` —
