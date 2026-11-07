@@ -27,6 +27,7 @@ Assume nothing that is not written down. Ask instead of guessing; if you cannot 
 | Document-driven specification | Prompt-to-code hacking |
 | Validated solutions to human problems | Unchecked accumulation of raw software |
 | Deterministic fitness verification and SDLC gates | Probabilistic LLM generation |
+| Small chunks of verifiable modular work | Monolithic mega-tasks |
 | Human-readable clean code and stated rationale | Mere compilation success |
 | Systemic AI-workforce constraints | Unguided agent autonomy |
 
@@ -82,6 +83,7 @@ Every feature, fix, and refactor walks this pipeline. A stage may not start unti
 **Rules for all stages**
 
 - One stage, one agent, one context. Do not read the whole repo; read your inputs.
+- Slice work into the smallest verifiable chunk: one module, one contract, one gate per task. A task that mixes modules or stages is a decomposition failure — split it into issues before starting, never grind through it as one mega-task.
 - Every artifact declares its `REQ-xxxx` / `UC-xxxx` ID at the top.
 - Every implementation file carries `// Trace: UC-xxxx` (or the language equivalent) on each public unit.
 - A gate that cannot be run automatically must be run by a named human, not by the agent that produced the work.
